@@ -1,9 +1,0 @@
-<div class="current_survey">
-  <h2> <%= @survey.title %> </h2>
-  <h4> Created by : <%= @survey.creator  %> </h4>
-  <% @survey.questions.each do |quest| %>
-    <% @question = quest %>
-    <%= erb :_question %>
-    <% end %>
-
-</div>

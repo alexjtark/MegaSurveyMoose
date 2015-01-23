@@ -1,7 +1,10 @@
 
-
 get '/login' do
-  erb :'auth/_login'
+  if request.xhr?
+    erb :'auth/_login', layout: false
+  else
+    erb :'auth/_login'
+  end
 end
 
 post '/login' do
@@ -16,7 +19,12 @@ post '/login' do
 end
 
 get '/signup' do
-  erb :'auth/_signup'
+  if request.xhr?
+    erb :'auth/_signup', layout: false
+  else
+    erb :'auth/_signup'
+  end
+
 end
 post '/signup' do
  user = User.create(params[:user])
@@ -29,12 +37,13 @@ post '/signup' do
   end
 end
 
-get '/user/:id' do
+get '/user/:id' do |id|
+  @survey = Survey.where(creator_id: id)
+  erb :index
   # shows all surveys created by user
-
 end
 
-get '/signout' do
+get '/logout' do
   session.clear
   redirect '/'
 end
