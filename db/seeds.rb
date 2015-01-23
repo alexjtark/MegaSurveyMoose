@@ -14,8 +14,8 @@
     survey.save
 
   end
-end
 
-16.times do
-  Response.create(answer_id: rand(1..16), taker_id: rand(1..2))
+
+48.times do
+  Response.create(answer_id: rand(1..24), taker_id: rand(1..3))
 end
