@@ -3,6 +3,6 @@ class Answer < ActiveRecord::Base
   belongs_to :question
   has_many :responses
 
-  validates :answer_content, presence: true
+  validates :content, presence: true
 
 end
