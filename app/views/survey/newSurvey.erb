@@ -1,0 +1,8 @@
+<form action="/survey/new" method="POST">
+
+  <input type="text"  name="survey[title]" placeholder="Enter Title here">
+    <%= erb :'survey/_newQuestion'%>
+    <!-- do some ajax here to add more questions -->
+
+  <input type="submit" value="Create Survey!">
+</form>
