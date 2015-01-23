@@ -1,0 +1,7 @@
+<div id="survey_headers">
+  <% @survey.each do |survey| %>
+    <div class="survey">
+      <a href="/survey/<%= survey.id %>"><%= survey.title %> </a>
+    </div>
+    <% end %>
+</div>

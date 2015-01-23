@@ -1,0 +1,12 @@
+<div class="current_survey">
+  <h2> <%= @survey.title %> </h2>
+  <h4> Created by : <%= @survey.creator  %> </h4>
+  <form action="">
+  <input type="hidden" name='survey[<%= @survey.id %>]'>
+    <% @survey.questions.each do |quest| %>
+      <% @question = quest %>
+      <%= erb :_question %>
+    <% end %>
+    <input type="submit" value="Submit">
+  </form>
+</div>
