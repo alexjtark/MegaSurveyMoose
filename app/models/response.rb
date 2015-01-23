@@ -3,6 +3,7 @@ class Response < ActiveRecord::Base
   belongs_to :answer
   belongs_to :taker, class_name: "User"
 
+
   def which_survey
     self.answer.question.survey
   end
