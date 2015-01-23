@@ -7,9 +7,10 @@
       <% if current_user %>
         <a href="/logout" id="logout">Logout</a>
       <% else %>
-        <a href="/login" id="login">Login</a>
-        <a href="/signup" id="signup">Signup</a>
+        <a id="login-button" href="/login" id="login">Login</a>
+        <a id="signup-button" href="/signup" id="signup">Signup</a>
       <% end %>
     </div>
-
+<div id="login-div"></div>
+<div id="signup-div"></div>
 </nav>
