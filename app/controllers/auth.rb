@@ -29,12 +29,13 @@ post '/signup' do
   end
 end
 
-get '/user/:id' do
+get '/user/:id' do |id|
+  @survey = Survey.where(creator_id: id)
+  erb :index
   # shows all surveys created by user
-
 end
 
-get '/signout' do
+get '/logout' do
   session.clear
   redirect '/'
 end
