@@ -1,0 +1,8 @@
+class Answer < ActiveRecord::Base
+  # Remember to create a migration!
+  belongs_to :question
+  has_many :responses
+
+  validates :content, presence: true
+
+end
