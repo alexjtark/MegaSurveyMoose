@@ -1,17 +1,19 @@
-1.times do
-  User.create(email: Faker::Internet.email, user_name: Faker::Name.name, password: "a")
-end
-
 2.times do
-  Survey.create(title: Faker::Lorem.sentence, creator_id: rand(1..2))
-end
+  user = User.create(email: Faker::Internet.email, user_name: Faker::Name.name, password: "a")
+  2.times do
+    survey = Survey.new(title: Faker::Lorem.sentence, creator_id: user)
+    4.times do
+      quest = Question.new(content: Faker::Lorem.sentence)
+      8.times do
+        ans = Answer.create(content: Faker::Lorem.sentence)
+        quest.answers << ans
+      end
+      quest.save
+      survey.questions << quest
+    end
+    survey.save
 
-4.times do
-  Question.create(content: Faker::Lorem.sentence, survey_id: rand(1..5))
-end
-
-8.times do
-  Answer.create(content: Faker::Lorem.sentence, question_id: rand(1..10))
+  end
 end
 
 16.times do
