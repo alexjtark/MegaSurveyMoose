@@ -1,6 +1,14 @@
 class Response < ActiveRecord::Base
   # Remember to create a migration!
-  has_many :answers
-  has_many :takers, class_name: "User"
+  belongs_to :answer
+  belongs_to :taker, class_name: "User"
+
+  def which_survey
+    self.answer.question.survey
+  end
+
+  def survey_creator
+    self.answer.question.survey.creator
+  end
 
 end
