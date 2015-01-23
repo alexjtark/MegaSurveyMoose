@@ -7,11 +7,11 @@ end
 end
 
 4.times do
-  Question.create(content: Faker::Lorem.sentence, survey_id: rand(1..5))
+  Question.create(content: Faker::Lorem.sentence, survey_id: rand(1..2))
 end
 
 8.times do
-  Answer.create(content: Faker::Lorem.sentence, question_id: rand(1..10))
+  Answer.create(content: Faker::Lorem.sentence, question_id: rand(1..4))
 end
 
 16.times do
