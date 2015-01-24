@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   validates :user_name, presence: true
 
   def answered_surveys
-    self.responses.first.answer.question.survey.creator
+    self.responses.first.answer.question.survey
   end
 
 end
