@@ -68,6 +68,35 @@ $(document).ready(function () {
     signupActive = true;
     loginActive = false;
   });
+
+  var questCounter = 0;
+
+  $('#new-survey-form').on('click', '#add-question', function(event){
+    event.preventDefault;
+    console.log("add-question was called");
+    $('#new-survey-form').append("<input type='text' name='question" + questCounter + "'>");
+    questCounter++;
+
+  });
+
+
+  $('#new-survey-form').on('click', '#add-answer', function(event){
+    event.preventDefault;
+    console.log("add-answer was called");
+    $('#new-survey-form').append("<li><input type='text' name='answer" + questCounter + "[]'></li>");
+  });
+
+  // $('#new-survey-form').on('submit', '#survey-new', function(event){
+  //   event.preventDefault
+  //   $.ajax({
+  //     url: '/survey/getid',
+  //     type: 'POST'
+  //   }).done(function (response){
+  //     $('#new-survey-form > form').html(response);
+  //     $.ajax
+  //   })
+
+  // })
 });
 
 

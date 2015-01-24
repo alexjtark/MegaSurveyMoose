@@ -12,9 +12,8 @@
       survey.questions << quest
     end
     survey.save
-
   end
-
+end
 
 48.times do
   Response.create(answer_id: rand(1..24), taker_id: rand(1..3))

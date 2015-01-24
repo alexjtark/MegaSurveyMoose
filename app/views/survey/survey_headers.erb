@@ -1,4 +1,5 @@
 <div id="survey_headers">
+  <h3>Surveys that you can answer</h3>
   <% survey.each do |surv| %>
     <div class="survey">
       <a href="/survey/<%= surv.id %>"><%= surv.title %> </a>
