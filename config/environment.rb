@@ -19,7 +19,7 @@ require 'sinatra'
 require "sinatra/reloader" if development?
 
 require 'erb'
-
+require 'pry'
 require 'faker'
 
 # Some helper constants for path-centric logic

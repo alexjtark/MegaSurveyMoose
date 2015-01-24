@@ -2,10 +2,10 @@
 
       <%= question.content %>
 
-        <% question.answers.each do |ans| %>
-         <span> <input type="radio" name="question[<%=question.id%>]" value='<%= ans.id %>'><%= ans.content %></span></br>
+       <ul> <% question.answers.each do |ans| %>
+         <li> <input type="radio" name="question[<%=question.id%>]" value='<%= ans.id %>'><%= ans.content %></li>
         <% end %>
-
+        </ul>
 
 
 </div>

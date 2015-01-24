@@ -1,11 +1,11 @@
-<div class="current_survey">
+<div class="current-survey">
   <h2> <%= @survey.title %> </h2>
-  <h4> Created by : <%= @survey.creator  %> </h4>
+  <h4> Created by : <%= User.find(@survey.creator_id).user_name  %> </h4>
   <form action="">
   <input type="hidden" name='survey[<%= @survey.id %>]'>
-    <% @survey.questions.each do |quest| %>
+   <ol> <% @survey.questions.each do |quest| %>
 
-      <%= erb :'survey/_question', locals: {question: quest} %>
+     <li> <%= erb :'survey/_question', locals: {question: quest} %> </li>
     <% end %>
     <input type="submit" value="Submit">
   </form>

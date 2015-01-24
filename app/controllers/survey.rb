@@ -20,11 +20,12 @@ put '/survey' do
 end
 
 
-post '/survey/new' do
+post '/survey/new', auth: :user do
   p params
   quiz = parse_question_answers(params)
 
-  params[:survey][:creator_id => current_user]
+  params[:survey][:creator_id] = current_user.id
+  binding.pry
   survey = Survey.create(params[:survey])
 
   quiz.each do |entry|

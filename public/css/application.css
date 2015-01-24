@@ -29,7 +29,7 @@ nav {
 
 }
 
-#main-container {
+#main-container, #new-survey-form, #survey, .current-survey {
   background-color: whitesmoke;
   border-radius: 10px;
   width: 80%;
