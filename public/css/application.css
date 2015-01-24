@@ -1,8 +1,57 @@
 /*== MAIN ==*/
 body {
-  border-top: 1em solid black;
+  /* border-top: 1em solid black; */
+  width: 100%;
+  background-color: #152B3C;
+  font: Share;
+  color: darkslategrey;
+
 }
 
+a {
+  text-decoration: none;
+  color: darkslategrey;
+}
+
+a:visited {
+  color: slategrey;
+}
+
+nav span{
+  border-left: 2px solid darkslategrey;
+  padding-left: 10px;
+
+}
+
+nav {
+  color: whitesmoke;
+  font-style: bold;
+
+}
+
+#main-container {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  width: 80%;
+  margin: 10%;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+#survey_headers {
+  margin: 5%;
+  font-size: 2em;
+
+}
+
+#survey_headers h3 {
+  border-bottom: 1px solid darkslategrey;
+
+}
+
+.survey {
+  padding-bottom: 1em;
+}
 #login-div {
 
 
