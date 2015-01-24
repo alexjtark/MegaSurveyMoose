@@ -7,9 +7,7 @@ get '/survey/new', auth: :user do
   erb :'survey/newSurvey'
 end
 
-get '/survey/:id', auth: :user do |id|
-
-  # take user to particular survey
+get '/survey/:id', auth: :user do |id|# take user to particular survey
   @survey = Survey.find(id)
   erb :'survey/_show'
 end
@@ -24,14 +22,18 @@ end
 
 post '/survey/new' do
   p params
+  quiz = parse_question_answers(params)
+
   params[:survey][:creator_id => current_user]
   survey = Survey.create(params[:survey])
 
-  question = Question.create(params[:question])
-  params[:answer].each do |v|
-    question.answers << Answer.create(content: v)
+  quiz.each do |entry|
+    question = Question.create(content: entry[0])
+    entry[1].each do |ans|
+      question.answers << Answer.create(content: ans)
+    end
+    survey.questions << question
   end
-  survey.questions << question
   redirect "/survey/#{survey.id}"
 end
 
