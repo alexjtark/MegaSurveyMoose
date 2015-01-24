@@ -1,11 +1,12 @@
 <nav>
   <span>Logo Goes Here</span>
-  <span> Create a Survey </span>
-  <span> My Surveys </span>
-  <span> Answered Surveys </span>
+
       <div id="login-toolbar">
       <% if current_user %>
         <a href="/logout" id="logout">Logout</a>
+          <span><a id="create-survey" href="/survey/new"> Create a Survey </a></span>
+          <span> <a id="my-survey-bar" href="">My Surveys </a></span>
+          <span> Answered Surveys </span>
       <% else %>
         <a id="login-button" href="/login">Login</a>
         <a id="signup-button" href="/signup">Signup</a>
