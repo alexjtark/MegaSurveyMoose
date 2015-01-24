@@ -1,8 +1,11 @@
-<form action="/survey/new" method="POST">
+<div id='new-survey-form'>
+  <form action="/survey/new" method="POST">
 
-  <input type="text"  name="survey[title]" placeholder="Enter Title here">
-    <%= erb :'survey/_newQuestion'%>
-  <button id='add-question'>Add a Question</button
+    <input type="text"  name="survey[title]" placeholder="Enter Title here">
+      <%= erb :'survey/_newQuestion'%>
+    <button type="button" id='add-question'>Add a Question</button>
+      <!-- add question button adds a new question with an indexed question in the name field -->
 
-  <input type="submit" value="Create Survey!">
-</form>
+    <input id='survey-new' type="submit" value="Create Survey!">
+  </form>
+</div>
