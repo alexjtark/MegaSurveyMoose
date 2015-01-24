@@ -24,7 +24,7 @@ nav span{
 }
 
 nav {
-  color: whitesmoke;
+  color: black;
   font-style: bold;
 
 }
@@ -58,5 +58,10 @@ nav {
 }
 
 #signup-div {
+
+}
+
+#signup_form {
+
 
 }

@@ -14,7 +14,7 @@ post '/login' do
     session[:user_id] = user.id
   redirect '/'
   else
-    redirect '/login'
+    redirect '/'
   end
 end
 
@@ -27,13 +27,14 @@ get '/signup' do
 
 end
 post '/signup' do
- user = User.create(params[:user])
+ user = User.new(params[:user])
 
   if user.save
     session[:user_id] = user.id
     redirect "/"
   else
-    redirect "/signup"
+    parse_ar_errors_for_display!(user.errors)
+    redirect "/"
   end
 end
 
