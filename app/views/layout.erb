@@ -16,7 +16,7 @@
   <link href='http://fonts.googleapis.com/css?family=Share:400,700' rel='stylesheet' type='text/css'>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="/js/application.js"></script>
+  <script src="/js/buttonevents.js"></script>
 
   <title></title>
 </head>
@@ -25,6 +25,17 @@
   <header>
  <%= erb :_header  %>
   </header>
+  <div id="errors-display"><p>
+    <% if session[:errors] %>
+      Uh-oh, something went wrong...
+      <ul>
+        <% display_errors!.each do |error| %>
+          <li><%= error.capitalize %></li>
+        <% end %>
+      </ul>
+    <% end %></p>
+  </div>
+
   <%= yield %>
 </div>
 </body>
