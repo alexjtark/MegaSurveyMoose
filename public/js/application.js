@@ -74,16 +74,20 @@ $(document).ready(function () {
   $('#new-survey-form').on('click', '#add-question', function(event){
     event.preventDefault;
     console.log("add-question was called");
-    $('#new-survey-form').append("<input type='text' name='question" + questCounter + "'>");
+    $('#questions').append("<div id='q" + questCounter + "'><input type='text' name='q" + questCounter + "[]'><button type='button' class='add-answer'>Add an Answer</button></div>");
     questCounter++;
 
   });
 
 
-  $('#new-survey-form').on('click', '#add-answer', function(event){
+  $('#new-survey-form').on('click', '.add-answer', function(event){
     event.preventDefault;
+    $target=event.target;
+    name = $($target).closest('div').attr('id');
     console.log("add-answer was called");
-    $('#new-survey-form').append("<li><input type='text' name='answer" + questCounter + "[]'></li>");
+    console.log(name);
+    $("#" + name).append(
+      "<li><input type='text' name='"+ name + "[]'></li>");
   });
 
   // $('#new-survey-form').on('submit', '#survey-new', function(event){
