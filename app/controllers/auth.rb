@@ -14,7 +14,7 @@ post '/login' do
     session[:user_id] = user.id
   redirect '/'
   else
-    redirect '/login'
+    redirect '/'
   end
 end
 
