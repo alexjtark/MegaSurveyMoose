@@ -7,6 +7,16 @@
     <% end %>
     <% else %>
       <h3>Welcome, please sign in to start</h3>
-       </div>
-    <% end %>
+      <div id="errors-display"><p>
+        <% if session[:errors] %>
+        Uh-oh, something went wrong...
+        <ul>
+          <% display_errors!.each do |error| %>
+            <li><%= error.capitalize %></li>
+          <% end %>
+        </ul>
+        <% end %>
+      </p></div>
+    </div>
+  <% end %>
 </div>
