@@ -6,10 +6,19 @@ body {
   font: Share;
   color: darkslategrey;
 
+  /* border: 1px solid darkslategrey; */
 }
 
+span.bar {
+  background: aquamarine;
+  display: flex;
+  border: 1px solid slategray;
+  border-radius: 8px;
+}
 
-
+ul li {
+  list-style-type: disc;
+}
 div#login {
     float: right;
     color: darkslategrey;
