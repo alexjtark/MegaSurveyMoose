@@ -13,4 +13,8 @@ class Question < ActiveRecord::Base
     self.answers.all.inject(0) {|sum, x| sum + x.how_many_responses}
   end
 
+  def sorted_answers
+    self.answers.sort_by {|a| 1 / a.percentage.to_f}
+  end
+
 end
