@@ -1,18 +1,19 @@
 <nav>
-  <span>Logo Goes Here</span>
-
-      <div id="login-toolbar">
-      <% if current_user %>
-        <a href="/logout" id="logout">Logout</a>
-          <span><a id="create-survey" href="/survey/new"> Create a Survey </a></span>
-          <span> <a id="my-survey-bar" href="">My Surveys </a></span>
-          <span> Answered Surveys </span>
-      <% else %>
-        <a id="login-button" href="/">Login</a>
-        <a id="signup-button" href="/signup">Signup</a>
-
-      <% end %>
-    </div>
-<div id="login"></div>
-<div id="signup"></div>
+  <div id='logo'><img src="/imgs/survey_moose.png"><span>Mega Moose Survey</span>
+  </div>
+  <div id="login-toolbar">
+    <% if current_user %>
+    <div id='username'>Logged in as: <%= current_user.user_name %> </div>
+      <a href="/logout" id="logout">Logout</a>
+        <span><a id="create-survey" href="/survey/new"> Create a Survey </a></span>
+        <span> <a id="my-survey-bar" href="">My Surveys </a></span>
+        <span> Answered Surveys </span>
+    <% else %>
+    <div id='username'>Not Logged in</div>
+      <a id="login-button" href="/">Login</a>
+      <a id="signup-button" href="/signup">Signup</a>
+    <% end %>
+  </div>
+  <div id="login"></div>
+  <div id="signup"></div>
 </nav>

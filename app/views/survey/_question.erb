@@ -1,6 +1,6 @@
 <div class="question">
-
-      <%= question.content %>
+  <%= question.content %>
+    <% unless current_user.responses.answer.question_id
 
        <ul> <% question.answers.each do |ans| %>
          <li> <input type="radio" name="question[<%=question.id%>]" value='<%= ans.id %>'><%= ans.content %></li>

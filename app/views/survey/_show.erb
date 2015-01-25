@@ -1,8 +1,9 @@
 <div class="current-survey">
   <h2> <%= @survey.title %> </h2>
   <h4> Created by : <%= User.find(@survey.creator_id).user_name  %> </h4>
-  <form action="">
-  <input type="hidden" name='survey[<%= @survey.id %>]'>
+  <form action="/survey/answer" method='POST'>
+  <input type="hidden" name='survey' value='<%= @survey.id %>'>
+  <input type="hidden" name='taker' value='<%= current_user.id%>'>
    <ol> <% @survey.questions.each do |quest| %>
 
      <li> <%= erb :'survey/_question', locals: {question: quest} %> </li>
