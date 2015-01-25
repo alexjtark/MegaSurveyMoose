@@ -3,6 +3,11 @@ get '/survey' do
 
 end
 
+get '/survey/answered/:id' do |id|
+  user = User.find(id)
+
+end
+
 get '/survey/new', auth: :user do
   erb :'survey/newSurvey'
 end
@@ -12,18 +17,18 @@ get '/survey/:id', auth: :user do |id|# take user to particular survey
   erb :'survey/_show'
 end
 
-put '/survey' do
-  survey = Survey.find(params[:survey])
-  answers =
-  survey
+# put '/survey' do
+#   survey = Survey.find(params[:survey])
+#   answers =
+#   survey
 
-end
+# end
 
 post '/survey/answer', auth: :user do
   p params
   user_id = params[:taker]
   params[:question].each do |q,a|
-    Response.create(taker_id: user_id, answer: a)
+    Response.create(taker_id: user_id, answer_id: a)
   end
 
   redirect '/'

@@ -5,9 +5,9 @@
     <% if current_user %>
     <div id='username'>Logged in as: <%= current_user.user_name %> </div>
       <a href="/logout" id="logout">Logout</a>
-        <span><a id="create-survey" href="/survey/new"> Create a Survey </a></span>
-        <span> <a id="my-survey-bar" href="">My Surveys </a></span>
-        <span> Answered Surveys </span>
+        <a id="create-survey" href="/survey/new"> Create a Survey </a>
+        <a id="my-survey-bar" href="/user/<%= current_user.id%>">My Surveys </a>
+        <a  Answered Surveys </span>
     <% else %>
     <div id='username'>Not Logged in</div>
       <a id="login-button" href="/">Login</a>
