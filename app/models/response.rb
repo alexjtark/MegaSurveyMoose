@@ -8,6 +8,10 @@ class Response < ActiveRecord::Base
     self.answer.question.survey
   end
 
+  def which_question
+    self.answer.question
+  end
+
   def survey_creator
     self.answer.question.survey.creator
   end
