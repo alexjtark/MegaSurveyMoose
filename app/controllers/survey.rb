@@ -19,13 +19,20 @@ put '/survey' do
 
 end
 
+post '/survey/answer', auth: :user do
+  p params
+  user_id = params[:taker]
+  params[:question].each do |q,a|
+    Response.create(taker_id: user_id, answer: a)
+  end
+
+  redirect '/'
+end
 
 post '/survey/new', auth: :user do
-  p params
-  quiz = parse_question_answers(params)
 
+  quiz = parse_question_answers(params)
   params[:survey][:creator_id] = current_user.id
-  binding.pry
   survey = Survey.create(params[:survey])
 
   quiz.each do |entry|
