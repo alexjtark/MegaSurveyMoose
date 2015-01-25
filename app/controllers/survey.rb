@@ -9,7 +9,11 @@ get '/survey/answered/:id' do |id|
 end
 
 get '/survey/new', auth: :user do
-  erb :'survey/newSurvey'
+  if request.xhr?
+    erb :'survey/newSurvey', layout: false
+  else
+    erb :'survey/newSurvey'
+  end
 end
 
 get '/survey/:id', auth: :user do |id|# take user to particular survey

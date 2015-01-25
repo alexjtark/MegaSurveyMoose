@@ -5,6 +5,8 @@ $(document).ready(function () {
       signupLoaded = false,
       signupActive = false;
 
+
+
   $('header').on('click', '#login-button', function (event) {
     event.preventDefault();
 
@@ -101,6 +103,21 @@ $(document).ready(function () {
   //   })
 
   // })
+
+// Question ajax div
+
+// $('#login-toolbar').on('click', '#create-survey', function (event){ event.preventDefault();
+//   $target = event.target;
+
+//   $.ajax({
+//     url: '/survey/new',
+//     type: 'GET',
+//     }).done(function (response) {
+//       $('#new-question-div').html(response);
+
+//     });
+
+//    });
 });
 
 
