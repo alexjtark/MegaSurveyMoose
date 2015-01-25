@@ -15,6 +15,7 @@ gem 'bcrypt-ruby'
 gem 'rake'
 gem 'pry'
 gem 'shotgun'
+gem 'chartkick'
 
 gem 'faker', '~>1.4'
 

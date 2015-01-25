@@ -1,8 +1,10 @@
 <div id="survey_headers">
+  <div id="new-question-div"></div>
   <% unless current_user %>
     <% link = 'span' %>
     <h3>Welcome, please sign in to answer these sweet Surveys</h3>
   <% else %>
+
     <% link = 'a' %>
     <h3>Surveys that you can answer</h3>
   <% end %>

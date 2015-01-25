@@ -93,20 +93,50 @@ nav {
 
 }
 
-#main-container, #new-survey-form, #survey, .current-survey {
+div#new-question-div {
+  font-size: 13px;
+  padding-top: 10px;
+}
+#main-container, #survey {
   background-color: whitesmoke;
   border-radius: 10px;
   width: 80%;
-  margin: 10%;
+  margin: auto;
+  /* padding-top: 3px; */
+  padding-bottom: 10px;
+  margin-top: 55px;
+}
+
+.current-survey {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  width: 80%;
+  margin: auto;
   padding-top: 3px;
   padding-bottom: 10px;
-  margin-top: 138px;
+  margin-top: 55px;
+  padding-left: 30px;
+}
+#new-survey-form {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  width: 80%;
+  /* margin: auto; */
+  /* padding-top: 3px; */
+  padding-bottom: 10px;
+  /* margin-top: 55px; */
+}
+
+button.add-answer {
+margin-left: 10px;
 }
 
 #survey_headers {
   margin: 5%;
   font-size: 2em;
 
+  /* margin-top: 44px; */
+  padding-top: 10px;
 }
 
 span#username {

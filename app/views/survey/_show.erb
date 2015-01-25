@@ -1,4 +1,5 @@
 <div class="current-survey">
+  <div id="new-question-div"></div>
   <h2> <%= @survey.title %> </h2>
   <% if current_user.id == @survey.creator_id %>
     <%= erb :'survey/_stats' %>
