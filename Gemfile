@@ -16,7 +16,7 @@ gem 'rake'
 gem 'pry'
 gem 'shotgun'
 
-gem 'faker'
+gem 'faker', '~>1.4'
 
 group :test do
   gem 'shoulda-matchers'
