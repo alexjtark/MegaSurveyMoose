@@ -1,0 +1,15 @@
+<div class="quiz-stats">
+
+  <h3>  On your survey entitled "<%= @survey.title %>" </h3>
+    <% @survey.questions.each do |q| %>
+     For the question <%= q.content %><br>
+     <% q.sorted_answers.each do |a| %><br>
+      <%= a.percentage %> of respondents answered <%= a.content %><br>
+     <% end %>
+     <br><br><br><br><br>
+    <% end %>
+
+
+
+
+</div>
