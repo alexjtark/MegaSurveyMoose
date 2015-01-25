@@ -13,16 +13,16 @@ ul li {
 }
 
 div#login {
-    float: right;
-    color: darkslategrey;
-    text-align: right;
+  float: right;
+  color: darkslategrey;
+  text-align: right;
 
 }
 
 form {
   color: darkslategrey;
     /* border-radius: 2px; */
-    display: run-in;
+  display: run-in;
 
 }
 
@@ -127,7 +127,8 @@ div#logo {
 }
 
 .survey {
-  padding-bottom: 1em;
+  /* padding-bottom: 1em; */
+  font-size: .75em;
 }
 
 
