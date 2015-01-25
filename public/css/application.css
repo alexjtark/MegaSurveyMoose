@@ -8,6 +8,62 @@ body {
 
 }
 
+
+
+div#login {
+    float: right;
+    color: darkslategrey;
+    text-align: right;
+    /* right: 0px; */
+    /* position: absolute; */
+}
+
+form {
+  color: darkslategrey;
+    /* border-radius: 2px; */
+    display: run-in;
+    /* width: 20%; */
+    /* text-align: right; */
+    /* right: 0px; */
+}
+
+div#login-form, #signup-form {
+    /* text-align: right; */
+    width: 20%;
+    margin-top: 10px;
+    margin-right: 93px;
+    float: right;
+}
+
+textarea {
+    position: absolute;
+    top: 45px;
+    left: 40%;
+    width: 30%;
+    height: 97px;
+    border-radius: 8px;
+}
+
+nav img {
+    width: 70px;
+}
+
+nav logo span {
+    top: 10px;
+    position: absolute;
+    /* float: left; */
+}
+
+div#login-toolbar {
+    /* float: right; */
+    /* position: relative; */
+    /* top: -4px; */
+    /* right: 0px; */
+    /* margin: 0; */
+    /* width: 45%; */
+    text-align: right;
+}
+
 a {
   text-decoration: none;
   color: darkslategrey;
@@ -17,31 +73,52 @@ a:visited {
   color: slategrey;
 }
 
-nav span{
-  border-left: 2px solid darkslategrey;
+#logo span{
+  /* border-left: 2px solid darkslategrey; */
+  /* float: right; */
   padding-left: 10px;
 
+  position: absolute;
+  top: 10px;
+  font-size: 2em;
+  width: 50%;
+  font-variant: small-caps;
+  justify-content: space-between;
 }
 
 nav {
-  color: black;
-  font-style: bold;
+  display: inline;
+  color: whitesmoke;
+  font-weight: bolder;
 
 }
 
-#main-container {
+#main-container, #new-survey-form, #survey, .current-survey {
   background-color: whitesmoke;
   border-radius: 10px;
   width: 80%;
   margin: 10%;
-  padding-top: 20px;
+  padding-top: 3px;
   padding-bottom: 10px;
+  margin-top: 138px;
 }
 
 #survey_headers {
   margin: 5%;
   font-size: 2em;
 
+}
+
+span#username {
+    float: right;
+    top: -42px;
+}
+
+div#logo {
+    width: 50%;
+    margin: 0;
+    position: absolute;
+    top: 0px;
 }
 
 #survey_headers h3 {
@@ -55,6 +132,12 @@ nav {
 #login-div {
 
 
+}
+
+input {
+    border-radius: 8px;
+    padding-top: 2px;
+    margin-top: 3px;
 }
 
 #signup-div {
