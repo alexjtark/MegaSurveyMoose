@@ -5,35 +5,31 @@ body {
   background-color: #152B3C;
   font: Share;
   color: darkslategrey;
-
-  /* border: 1px solid darkslategrey; */
 }
 
-span.bar {
-  background: aquamarine;
-  display: flex;
-  border: 1px solid slategray;
-  border-radius: 8px;
-}
 
 ul li {
   list-style-type: disc;
 }
+
 div#login {
     float: right;
     color: darkslategrey;
     text-align: right;
-    /* right: 0px; */
-    /* position: absolute; */
+
 }
 
 form {
   color: darkslategrey;
     /* border-radius: 2px; */
     display: run-in;
-    /* width: 20%; */
-    /* text-align: right; */
-    /* right: 0px; */
+
+}
+
+input {
+    border-radius: 8px;
+    padding-top: 2px;
+    margin-top: 3px;
 }
 
 div#login-form, #signup-form {
@@ -64,12 +60,7 @@ nav logo span {
 }
 
 div#login-toolbar {
-    /* float: right; */
-    /* position: relative; */
-    /* top: -4px; */
-    /* right: 0px; */
-    /* margin: 0; */
-    /* width: 45%; */
+
     text-align: right;
 }
 
@@ -138,22 +129,15 @@ div#logo {
 .survey {
   padding-bottom: 1em;
 }
-#login-div {
 
 
-}
-
-input {
-    border-radius: 8px;
-    padding-top: 2px;
-    margin-top: 3px;
-}
-
-#signup-div {
-
-}
-
-#signup_form {
 
 
+
+
+span.bar {
+  background: aquamarine;
+  display: flex;
+  border: 1px solid slategray;
+  border-radius: 8px;
 }
