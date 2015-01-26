@@ -1,14 +1,18 @@
 <div id="survey_headers">
   <div id="new-question-div"></div>
-  <% if current_user %>
-  <h3>Surveys that you can answer</h3>
+  <% unless current_user %>
+    <% link = 'span' %>
+    <h3>Welcome, please sign in to answer these sweet Surveys</h3>
+  <% else %>
+
+    <% link = 'a' %>
+    <h3>Surveys that you can answer</h3>
+  <% end %>
+  <ul>
   <% survey.each do |surv| %>
     <div class="survey">
-      <a href="/survey/<%= surv.id %>"><%= surv.title %> </a>
+      <li><<%= link %> href="/survey/<%= surv.id %>"><%= surv.title %> </<%= link %>></li>
+      </div>
     <% end %>
-    <% else %>
-      <h3>Welcome, please sign in to start</h3>
 
-    </div>
-  <% end %>
 </div>
