@@ -1,0 +1,28 @@
+<div class="display-taken-survey">
+<!-- Going to comment as a walk-through for the surveys data in this view file... if possible, I'll refactor later to split information out but it IS a complexly-organized data structure-->
+
+  <!-- The 'each' below this line separates all responses to a particular survey, regardless of how many times the user answered that survey-->
+  <% @user.every_individual_survey_taken_by_user.each do |survey_user_answered_many_times| %>
+
+<!-- The each below separates out the array of the users' responses to a particular survey into individual instances of answering that particular survey-->
+    <% survey_user_answered_many_times.each do |instance_of_answered_survey| %>
+
+      For the survey
+
+      <%=instance_of_answered_survey.first.which_survey.title%>,<br><br><br>
+
+      created by
+      <%= instance_of_answered_survey.first.which_survey.creator.user_name%>,<br><br>
+
+      You answered some questions. <br>
+<!-- The each below separates out the array of the users' individual instances of answering that particular survey to display the question and answer-->
+      <% instance_of_answered_survey.each do |response|%>
+
+      For the question "<%= response.answer.question.content%>"<br>
+      You answered "<%=response.answer.content%>"<br><br>
+
+      <% end %>
+      <br><br><br>
+    <% end %>
+
+  <% end %>
