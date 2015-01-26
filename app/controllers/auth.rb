@@ -26,6 +26,7 @@ get '/signup' do
   end
 
 end
+
 post '/signup' do
  user = User.new(params[:user])
 

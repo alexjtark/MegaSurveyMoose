@@ -31,8 +31,10 @@ end
 post '/survey/answer', auth: :user do
   p params
   user_id = params[:taker]
-  params[:question].each do |q,a|
-    Response.create(taker_id: user_id, answer_id: a)
+  unless params[:question].nil?
+    params[:question].each do |q,a|
+      Response.create(taker_id: user_id, answer_id: a)
+    end
   end
 
   redirect '/'
