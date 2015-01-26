@@ -15,4 +15,8 @@ class User < ActiveRecord::Base
     self.which_surveys_answered.map {|t| t.responses.where(taker_id: self.id)}.map {|s| s.sort_by {|t| t.created_at} }
   end
 
+  def every_individual_survey_taken_by_user
+    return self.sorted_responses_to_all_surveys.map {|s| s.group_by{|v| v.created_at.to_i}.values}
+  end
+
 end
