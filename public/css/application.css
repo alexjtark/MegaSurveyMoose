@@ -97,14 +97,14 @@ div#new-question-div {
   font-size: 13px;
   padding-top: 10px;
 }
-#main-container, #survey {
+#main-container, #survey, .display-taken-survey {
   background-color: whitesmoke;
   border-radius: 10px;
   width: 80%;
   margin: auto;
   /* padding-top: 3px; */
   padding-bottom: 10px;
-  margin-top: 55px;
+  margin-top: 123px;
 }
 
 .current-survey {
