@@ -4,8 +4,8 @@ get '/survey' do
 end
 
 get '/survey/answered/:id' do |id|
-  user = User.find(id)
-
+  @user = User.find(id)
+  erb :'/survey/_taken_surveys_display'
 end
 
 get '/survey/new', auth: :user do
