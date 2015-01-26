@@ -76,7 +76,7 @@ $(document).ready(function () {
   $('#new-survey-form').on('click', '#add-question', function(event){
     event.preventDefault;
     console.log("add-question was called");
-    $('#questions').append("<div id='q" + questCounter + "'><input type='text' name='q" + questCounter + "[]'><button type='button' class='add-answer'>Add an Answer</button></div>");
+    $('#questions').append("<div id='q" + questCounter + "'><input type='text' size='75' name='q" + questCounter + "[]'><br><button type='button' class='add-answer'>Add an Answer</button></div>");
     questCounter++;
 
   });
@@ -89,35 +89,44 @@ $(document).ready(function () {
     console.log("add-answer was called");
     console.log(name);
     $("#" + name).append(
-      "<li><input type='text' name='"+ name + "[]'></li>");
+      "<li><input type='text' size='75' name='"+ name + "[]'></li>");
   });
 
-  // $('#new-survey-form').on('submit', '#survey-new', function(event){
-  //   event.preventDefault
-  //   $.ajax({
-  //     url: '/survey/getid',
-  //     type: 'POST'
-  //   }).done(function (response){
-  //     $('#new-survey-form > form').html(response);
-  //     $.ajax
-  //   })
-
-  // })
 
 // Question ajax div
 
-// $('#login-toolbar').on('click', '#create-survey', function (event){ event.preventDefault();
-//   $target = event.target;
+  $('#login-toolbar').on('click', '#create-survey', function (event){ event.preventDefault();
+    $target = event.target;
 
-//   $.ajax({
-//     url: '/survey/new',
-//     type: 'GET',
-//     }).done(function (response) {
-//       $('#new-question-div').html(response);
+    $.ajax({
+      url: '/survey/new',
+      type: 'GET',
+      }).done(function (response) {
+        $('#new-question-div').html(response);
 
-//     });
 
-//    });
+
+    var questCounter = 0;
+
+    $('#new-survey-form').on('click', '#add-question', function(event){
+      event.preventDefault;
+      console.log("add-question was called");
+      $('#questions').append("<div id='q" + questCounter + "'><input type='text' size='75' name='q" + questCounter + "[]'><button type='button' class='add-answer'>Add an Answer</button></div>");
+      questCounter++;
+    });
+
+
+    $('#new-survey-form').on('click', '.add-answer', function(event){
+      event.preventDefault;
+      $target=event.target;
+      name = $($target).closest('div').attr('id');
+      console.log("add-answer was called");
+      console.log(name);
+      $("#" + name).append(
+      "<li><input type='text' size='50' name='"+ name + "[]'></li>");
+      });
+    });
+  });
 });
 
 
