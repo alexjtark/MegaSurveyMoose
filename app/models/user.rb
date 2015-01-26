@@ -7,8 +7,12 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates :user_name, presence: true
 
-  def answered_surveys
-    self.responses.first.answer.question.survey
+  def which_surveys_answered
+    self.responses.all.map {|t| t.which_survey }.uniq {|s| s.id }
+  end
+
+  def sorted_responses_to_all_surveys
+    self.which_surveys_answered.map {|t| t.responses.where(taker_id: self.id)}.map {|s| s.sort_by {|t| t.created_at} }
   end
 
 end
