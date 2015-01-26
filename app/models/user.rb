@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates :user_name, presence: true
 
-  def answered_surveys
+  def which_surveys_answered
     self.responses.all.map {|t| t.which_survey }.uniq {|s| s.id }
   end
 
