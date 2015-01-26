@@ -1,11 +1,13 @@
 <div class="question">
   <%= question.content %>
-       <ul> <% question.answers.each do |ans| %>
-         <li> <input type="radio" name="question[<%=question.id%>]" value='<%= ans.id %>'><%= ans.content %></li>
-        <% end %>
-        </ul>
-
-
+  <% unless question.responses_from_user(current_user.id).empty? %>
+    <h4> You've chosen <%= question.responses_from_user(current_user.id).first.content %> </h4>
+  <% else %>
+      <ul> <% question.answers.each do |ans| %>
+        <li> <input type="radio" name="question[<%=question.id%>]" value='<%= ans.id %>'><%= ans.content %></li>
+      <% end %>
+      </ul>
+  <% end %>
 </div>
 
 

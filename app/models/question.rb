@@ -9,6 +9,10 @@ class Question < ActiveRecord::Base
     self.answers.all.count
   end
 
+  def responses_from_user(user)
+    self.answers.map {|a| a.responses.where(taker_id: user)}.flatten.map {|r| r.answer}
+  end
+
   def how_many_responses
     self.answers.all.inject(0) {|sum, x| sum + x.how_many_responses}
   end

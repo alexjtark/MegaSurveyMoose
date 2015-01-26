@@ -7,9 +7,9 @@
 <!-- The each below separates out the array of the users' responses to a particular survey into individual instances of answering that particular survey-->
     <% survey_user_answered_many_times.each do |instance_of_answered_survey| %>
 
-      For the survey
+      <h3>For the survey
 
-      <%=instance_of_answered_survey.first.which_survey.title%>,<br><br><br>
+      <%=instance_of_answered_survey.first.which_survey.title%>,</h3><br><br><br>
 
       created by
       <%= instance_of_answered_survey.first.which_survey.creator.user_name%>,<br><br>

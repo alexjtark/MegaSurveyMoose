@@ -7,7 +7,7 @@
       <a href="/logout" id="logout">Logout</a>
         <a id="create-survey" href="/survey/new"> Create a Survey </a>
         <a id="my-survey-bar" href="/user/<%= current_user.id%>">My Surveys </a>
-        <a  Answered Surveys </span>
+        <a id="answered-surveys" href="/survey/answered/<%= current_user.id%>">Answered Surveys </a></span>
     <% else %>
     <div id='username'>Not Logged in</div>
       <a id="login-button" href="/">Login</a>
